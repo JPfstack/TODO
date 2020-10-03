@@ -1,0 +1,22 @@
+.contenedor {
+    background-image: url("../../assets/imagenes/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+form {
+    display: block;
+    margin: 0 0 0 10px;
+    width: 50%;
+    padding-right: 0;
+}
+
+.texto {
+    font-family: 'Handlee', cursive;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: rotate(-15deg);
+}
