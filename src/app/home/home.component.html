@@ -2,10 +2,7 @@
 
     <form>
         <div class="form-row align-items-center">
-            <div class="col-sm-3 my-1">
-                <label class="sr-only" for="inlineFormInputName">Nombre</label>
-                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
-            </div>
+
             <div class="col-sm-3 my-1">
                 <label class="sr-only" for="inlineFormInputGroupUsername">Usuario</label>
                 <div class="input-group">
@@ -15,16 +12,21 @@
                     <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Usuario">
                 </div>
             </div>
-            <div class="col-auto my-1">
+            <div class="col-sm-3 my-1">
+                <label class="sr-only" for="inlineFormInputName">Contraseña</label>
+                <input type="password" class="form-control" id="inlineFormInputName" placeholder="******">
+            </div>
+            <!--   <div class="col-auto my-1">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
                     <label class="form-check-label" for="autoSizingCheck2">
                         Recuérdame
                     </label>
                 </div>
-            </div>
+            </div> -->
             <div class="col-auto my-1">
-                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="submit" class="btn btn-secondary">Entrar</button>
+                <button type="submit" class="btn btn-secondary" [routerLink]="['/login']">Registrarse</button>
             </div>
         </div>
     </form>

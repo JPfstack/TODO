@@ -1,0 +1,83 @@
+.contenedor {
+    display: flex;
+}
+
+.busqueda {
+    background-image: url("../../assets/imagenes/agenda2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 100vh;
+}
+
+.tareas {
+    background-image: url("../../assets/imagenes/agenda4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70%;
+    height: 100vh;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.buscar {
+    width: 80%;
+    margin: 100px auto 20px auto;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.btn-secondary {
+    display: block;
+    margin: auto;
+}
+
+.prioridad {
+    width: 80%;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+#linea {
+    border: 1px solid white;
+    margin-top: 15px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.tarea {
+ width: 90%;
+ margin: 10px auto;
+ padding: 5px;
+ background-color: rgba(255, 255, 255, 0.7);
+ border-radius: 10px;
+ padding: 5px;
+ font-family: 'Montserrat', sans-serif;
+
+}
+
+#acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-outline-danger {
+    height: 50px;
+    margin: 5px;
+}
+
+.btnSalir {
+    width: 75px;
+    margin: 100px auto 0px auto;
+    font-family: 'Montserrat', sans-serif;
+
+}

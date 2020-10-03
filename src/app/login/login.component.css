@@ -7,12 +7,21 @@
 }
 
 form {
-    display: block;
-    margin: 0 0 0 10px;
-    width: 50%;
-    padding-right: 0;
+    margin: auto;
+    padding-top: 180px;
+    width: 30%;
     font-family: 'Montserrat', sans-serif;
+}
 
+.input-group {
+    margin-bottom: 15px;
+}
+
+.btn-secondary {
+    display: block;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
 }
 
 .texto {
@@ -21,8 +30,4 @@ form {
     top: 50%;
     left: 20%;
     transform: rotate(-15deg);
-}
-
-.btn {
-    margin-right: 10px;
 }
