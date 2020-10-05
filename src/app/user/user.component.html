@@ -1,16 +1,17 @@
 <div class="contenedor">
 
     <div class="busqueda">
-        <h2>Bienvenid@ XXXXX</h2>
-        <form>
+        <h2>Bienvenid@ {{nombre}}</h2>
+        <form [formGroup]="nuevatarea" (ngSubmit)="registrarTarea()">
             <div class="form-group">
                 <label for="exampleFormControlInput1"></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Sacar al perro">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la tarea"
+                    formControlName="titulo">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1"></label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Prioridad</option>
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="prioridad">
+                    <option>Sin Prioridad</option>
                     <option>Diaria</option>
                     <option>Semanal</option>
                     <option>Mensual</option>
@@ -20,7 +21,7 @@
             <div class="form-group">
                 <label for="exampleFormControlTextarea1"></label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                    placeholder="Sacar al perro tres veces al día..."></textarea>
+                    placeholder="Descripción de la tarea..." formControlName="descripcion"></textarea>
             </div>
             <input type="submit" value="Guardar" class="btn btn-secondary">
         </form>

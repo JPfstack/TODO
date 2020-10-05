@@ -1,25 +1,26 @@
 <div class="contenedor">
-    <form>
+    <form [formGroup]="registro" (ngSubmit)="onRegistro()">
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text">@</div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Usuario">
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="usuario"
+                formControlName="usuario">
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" placeholder="email@email.com">
+            <input type="email" class="form-control" placeholder="email@email.com" formControlName="email">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Contraseña">
+            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
         </div>
-        <div class="form-group">
+        <!--   <div class="form-group">
             <input type="password" class="form-control" placeholder="Repite contraseña">
-        </div>
+        </div> -->
 
         <button type="submit" class="btn btn-secondary">Enviar</button>
 
     </form>
-    <button type="submit" class="btn btn-secondary" [routerLink]="['/home']">Volver</button>
+    <button class="btn btn-secondary" [routerLink]="['/home']">Volver</button>
     <div class="texto">
         <h2>Agenda TODO</h2>
         <p>Mi agenda TODO para todo lo que necesite recordar...</p>
