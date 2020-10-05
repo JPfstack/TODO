@@ -16,6 +16,7 @@
     background-repeat: no-repeat;
     width: 70%;
     height: 100vh;
+    overflow: auto;
 }
 
 form {
@@ -80,4 +81,29 @@ h2 {
     margin: 100px auto 0px auto;
     font-family: 'Montserrat', sans-serif;
 
+}
+
+.Mensual {
+    border: 2px solid orange;
+}
+
+.Semanal {
+    border: 2px solid yellowgreen;
+}
+
+.Diaria {
+    border: 2px solid forestgreen;
+}
+
+.Urgente {
+    border: 2px solid tomato;
+}
+
+#salir {
+    position: absolute;
+    top: 200px;
+    left: 35%;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 500px black;
 }

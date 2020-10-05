@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   // VARIABLES 
   login: FormGroup;
+  imgregistro: boolean;
 
   constructor(
     private usuariosService: UsuariosService,
@@ -21,7 +22,9 @@ export class HomeComponent implements OnInit {
     this.login = new FormGroup({
       usuario: new FormControl(),
       password: new FormControl()
-    })
+    });
+
+    this.imgregistro = false;
   }
 
   ngOnInit(): void {
@@ -33,6 +36,11 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('token', respuesta['token']);
     localStorage.setItem('usuario', respuesta.usuario.usuario);
 
-    this.router.navigate(['/user'])
+    this.imgregistro = true;
+
+    setTimeout(() => {
+      this.router.navigate(['/user'])
+    }, 3000);
+
   }
 }

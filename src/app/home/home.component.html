@@ -21,10 +21,14 @@
             <div class="col-auto my-1">
                 <button type="submit" class="btn btn-secondary">Entrar</button>
             </div>
-        </div>
-    </form>
-    <button type="submit" class="btn btn-secondary" [routerLink]="['/login']">Registrarse</button>
+            <button type="submit" class="btn btn-secondary" [routerLink]="['/login']">Registrarse</button>
 
+        </div>
+
+    </form>
+    <div id="imgregistro" *ngIf="imgregistro">
+        <img src="../../assets/imagenes/registro.gif" alt="">
+    </div>
     <div class="texto">
         <h2>Agenda TODO</h2>
         <p>Mi agenda TODO para todo lo que necesite recordar...</p>

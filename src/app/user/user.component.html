@@ -26,21 +26,31 @@
             <input type="submit" value="Guardar" class="btn btn-secondary">
         </form>
         <div id="linea"></div>
-        <input class="form-control buscar" type="text" placeholder="Buscar tarea">
-        <select class="form-control prioridad">
-            <option>Seleccionar prioridad</option>
-            <option>Diaria</option>
-            <option>Semanal</option>
-            <option>Mensual</option>
-            <option>Urgente</option>
+        <input class="form-control buscar" type="text" placeholder="Buscar tarea" (input)="onInput($event)">
+        <select class="form-control prioridad" (change)="onChange($event)">
+            <option value="sin prioridad">Seleccionar prioridad</option>
+            <option value="Diaria">Diaria</option>
+            <option value="Semanal">Semanal</option>
+            <option value="Mensual">Mensual</option>
+            <option value="Urgente">Urgente</option>
         </select>
 
-        <button class="btn btn-secondary btnSalir">Salir</button>
+        <button class="btn btn-secondary btnSalir" (click)="onSalir()">Salir</button>
     </div>
     <div class="tareas">
         <h2>Estas son tus próximas tareas</h2>
 
-        <div class="tarea">
+        <div class="tarea {{tarea.prioridad}}" *ngFor="let tarea of listaTareas">
+            <h3>{{tarea.titulo}}</h3>
+            <div id="acciones">
+                <p>{{tarea.descripcion}}</p>
+                <button (click)="borrarTarea(tarea.id)" class="btn btn-outline-danger">Eliminar</button>
+            </div>
+            <div>
+                <p>{{tarea.prioridad}}</p>
+            </div>
+        </div>
+        <!--  <div class="tarea">
             <h3>Sacar al perro</h3>
             <div id="acciones">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde hic eaque quos. Quod earum a
@@ -53,20 +63,9 @@
             <div>
                 <p>Prioridad</p>
             </div>
-        </div>
-        <div class="tarea">
-            <h3>Sacar al perro</h3>
-            <div id="acciones">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde hic eaque quos. Quod earum a
-                    cumque,
-                    beatae nulla ut ab accusamus. Sint quos saepe unde exercitationem cum aperiam molestiae?</p>
-                <button class="btn btn-outline-danger">Eliminar</button>
-
-            </div>
-
-            <div>
-                <p>Prioridad</p>
-            </div>
-        </div>
+        </div> -->
+    </div>
+    <div id="salir" *ngIf="salir">
+        <img src="../../assets/imagenes/salir.gif">
     </div>
 </div>

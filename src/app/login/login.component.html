@@ -1,9 +1,6 @@
 <div class="contenedor">
     <form [formGroup]="registro" (ngSubmit)="onRegistro()">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <div class="input-group-text">@</div>
-            </div>
+        <div class="form-group">
             <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="usuario"
                 formControlName="usuario">
         </div>
@@ -11,7 +8,7 @@
             <input type="email" class="form-control" placeholder="email@email.com" formControlName="email">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+            <input type="password" class="form-control" placeholder="contraseña" formControlName="password">
         </div>
         <!--   <div class="form-group">
             <input type="password" class="form-control" placeholder="Repite contraseña">
