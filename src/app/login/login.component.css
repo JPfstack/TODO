@@ -11,7 +11,7 @@ form {
     padding-top: 180px;
     width: 30%;
     font-family: 'Montserrat', sans-serif;
-  
+      
 }
 
 .input-group {
@@ -37,3 +37,44 @@ form {
     left: 20%;
     transform: rotate(-15deg);
 }
+
+.existe img {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    width: 480px;
+    height: 210px;
+    top: 170px;
+    left: 35%;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 500px black;
+}
+
+.existe h2 {
+    padding: 65px 0px 0px 0px;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 480px;
+    height: 210px;
+    top: 170px;
+    left: 35%;
+    z-index: 2;
+}
+
+.existe p {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 480px;
+    height: 210px;
+    top: 170px;
+    left: 35%;
+    z-index: 2;
+    padding: 105px 0 0 0;
+}
+

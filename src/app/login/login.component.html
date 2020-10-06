@@ -1,4 +1,5 @@
 <div class="contenedor">
+
     <form [formGroup]="registro" (ngSubmit)="onRegistro()">
         <div class="form-group">
             <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="usuario"
@@ -22,4 +23,12 @@
         <h2>Agenda TODO</h2>
         <p>Mi agenda TODO para todo lo que necesite recordar...</p>
     </div>
+    <div *ngIf="existe" class="existe">
+        <h2>Usuario existente</h2>
+        <p>Pruebe con otro nombre de usuario</p>
+        <img src="../../assets/imagenes/hoja.jpg" alt="">
+    </div>
+
+
+
 </div>

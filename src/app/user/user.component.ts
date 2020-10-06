@@ -47,17 +47,20 @@ export class UserComponent implements OnInit {
     console.log(this.listaTareas);
   };
 
+
   async registrarTarea() {
     const respuesta = await this.tareasService.nuevaTarea(this.nuevatarea.value, this.fk_usuario);
-
+    this.nuevatarea.reset();
     this.ngOnInit();
 
   };
+
 
   async borrarTarea(pId) {
     const respuesta = await this.tareasService.removeTarea(pId);
     this.ngOnInit();
   };
+
 
   async onChange($event) {
     console.log($event.target.value);
@@ -67,11 +70,6 @@ export class UserComponent implements OnInit {
     } else {
       this.listaTareas = (await this.tareasService.getListaTareas(this.fk_usuario)).filter(tarea => tarea.prioridad == $event.target.value)
     }
-  };
-
-  async onInput($event) {
-    console.log($event.target.value);
-    /* this.listaTareas = await (await this.tareasService.getListaTareas(this.fk_usuario)).indexOf(tarea => tarea.titulo == $event.target.value) */
   };
 
 
@@ -84,6 +82,27 @@ export class UserComponent implements OnInit {
       this.router.navigate(['/home'])
 
     }, 3000);
+  };
+
+
+  buscarXInput(pLista, pInput) {
+    let listaXInput = new Array();
+
+    listaXInput = pLista.filter(tarea => {
+      let tareaMinus = tarea.titulo.toLowerCase();
+      return tareaMinus.includes(pInput);
+    });
+    return listaXInput;
+  }
+
+
+  onInput($event) {
+    let inputBuscado = $event.target.value.toLowerCase();
+
+    this.listaTareas = this.buscarXInput(this.listaTareas, inputBuscado);
+    console.log(this.listaTareas);
+
+    return this.listaTareas;
   };
 
 }

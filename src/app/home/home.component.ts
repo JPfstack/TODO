@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   // VARIABLES 
   login: FormGroup;
   imgregistro: boolean;
+  cerrar: boolean;
 
   constructor(
     private usuariosService: UsuariosService,
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.imgregistro = false;
+    this.cerrar = false;
   }
 
   ngOnInit(): void {
@@ -32,15 +34,30 @@ export class HomeComponent implements OnInit {
 
   async onLogin() {
     const respuesta = await this.usuariosService.getByUser(this.login.value);
-    console.log(respuesta.usuario.id, respuesta);
-    localStorage.setItem('token', respuesta['token']);
-    localStorage.setItem('usuario', respuesta.usuario.usuario);
+    console.log(respuesta.error);
 
-    this.imgregistro = true;
+    if (respuesta.error == "error is not defined") {
+      this.cerrar = true;
 
-    setTimeout(() => {
-      this.router.navigate(['/user'])
-    }, 3000);
 
+
+    }
+    else {
+      console.log(respuesta.usuario.id, respuesta);
+      localStorage.setItem('token', respuesta['token']);
+      localStorage.setItem('usuario', respuesta.usuario.usuario);
+
+      this.imgregistro = true;
+
+      setTimeout(() => {
+        this.router.navigate(['/user'])
+      }, 3000);
+    }
+
+  }
+
+  onCerrarX() {
+    this.cerrar = false;
+    this.login.reset();
   }
 }

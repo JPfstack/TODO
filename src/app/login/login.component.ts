@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   // VARIABLES
   registro: FormGroup;
+  existe: boolean;
 
   constructor(
     private usuarioService: UsuariosService,
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit {
       usuario: new FormControl(),
       email: new FormControl(),
       password: new FormControl()
-    })
+    });
+
+    this.existe = false;
   }
 
   ngOnInit(): void {
@@ -33,8 +36,17 @@ export class LoginComponent implements OnInit {
   async onRegistro() {
     const respuesta = await this.usuarioService.registroUsuario(this.registro.value);
     console.log(this.registro.value);
-    if (respuesta.affectedRows = 1) {
+    console.log(respuesta);
+
+    if (respuesta.affectedRows != 1) {
+      this.existe = true;
+      setTimeout(() => {
+        this.existe = false;
+      }, 4000);
+      this.registro.reset();
+    } else {
       this.router.navigate(['/home'])
+
     }
   }
 

@@ -35,4 +35,26 @@ form {
     border: 5px solid black;
     border-radius: 10px;
     box-shadow: 10px 10px 500px black;
+    z-index: 3;
+}
+
+.alert {
+    position: absolute;
+    top: 0px;
+    width: 620px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert p {
+    margin: 10px;
+}
+
+#foto {
+    width: 250px;
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    transform: rotate(-15deg);
 }

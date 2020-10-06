@@ -26,6 +26,10 @@
         </div>
 
     </form>
+    <div *ngIf="cerrar" class="alert alert-secondary" role="alert">
+        <p>¡Usuario o contraseña incorrectos! Inténtelo de nuevo.</p>
+        <button class="btn btn-secondary" (click)="onCerrarX()">X</button>
+    </div>
     <div id="imgregistro" *ngIf="imgregistro">
         <img src="../../assets/imagenes/registro.gif" alt="">
     </div>
@@ -33,5 +37,9 @@
         <h2>Agenda TODO</h2>
         <p>Mi agenda TODO para todo lo que necesite recordar...</p>
     </div>
+    <div id="foto">
+        <img src="../../assets/imagenes/foto.jpg" alt="">
+    </div>
+
 
 </div>
